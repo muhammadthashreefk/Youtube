@@ -1,103 +1,25 @@
 <!DOCTYPE html>
 <html lang="ml">
 <head>
-<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png">
-<link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png">
     <style>
-        /* അടിസ്ഥാന സ്റ്റൈലിംഗ് */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f9f9f9;
-        }
-
-        /* ഹെഡർ (യൂട്യൂബ് പോലെ) */
-        header {
-            background-color: white;
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            color: #FF0000;
-            font-weight: bold;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: black;
-            margin-left: 5px;
-        }
-
-        /* വീഡിയോ ഗ്രിഡ് */
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-            gap: 15px;
-            padding: 10px;
-        }
-
-        .video-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .thumbnail {
-            width: 100%;
-            height: 200px;
-            background-color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        /* കാർട്ടൂൺ ഇമേജുകൾക്ക് പകരം ലളിതമായ ബോക്സ് */
-        .thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .video-info {
-            padding: 10px;
-        }
-
-        .video-title {
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .video-meta {
-            font-size: 12px;
-            color: #606060;
-        }
-
-        /* പ്ലേ ബട്ടൺ ഐക്കൺ */
-        .play-btn {
-            position: absolute;
-            font-size: 40px;
-            color: rgba(255, 255, 255, 0.8);
-        }
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f9f9f9; }
+        header { background-color: white; padding: 10px 15px; display: flex; align-items: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100; }
+        .logo { color: #FF0000; font-weight: bold; font-size: 20px; display: flex; align-items: center; text-decoration: none; }
+        .logo span { color: black; margin-left: 5px; }
+        .video-container { display: grid; grid-template-columns: 1fr; gap: 15px; padding: 10px; }
+        .video-card { background: white; border-radius: 8px; overflow: hidden; cursor: pointer; }
+        .thumbnail { width: 100%; height: 200px; display: flex; justify-content: center; align-items: center; position: relative; background-color: #eee; }
+        .thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+        .video-info { padding: 10px; }
+        .video-title { font-weight: bold; font-size: 14px; }
+        .play-btn { position: absolute; font-size: 40px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo">
             <svg height="24" viewBox="0 0 24 24" width="24" fill="red"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -106,56 +28,22 @@
     </header>
 
     <div class="video-container">
-        <!-- വീഡിയോ 1 -->
-        <div class="video-card" onclick="playWarning()">
+        <div class="video-card" onclick="alert('കുട്ടികൾ ഫോണിൽ കളിക്കരുത്!'); playWarning();">
             <div class="thumbnail">
-                <img src="https://img.freepik.com/free-vector/cute-tiger-playing-with-ball-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated_138676-5744.jpg" alt="Cartoon">
+                <img src="https://img.freepik.com/free-vector/cute-tiger-playing-with-ball-cartoon-vector-icon-illustration_138676-5744.jpg" alt="Cartoon">
                 <div class="play-btn">▶</div>
             </div>
-            <div class="video-info">
-                <div class="video-title">കളിചിരി കാർട്ടൂൺ കഥകൾ - 01</div>
-                <div class="video-meta">5M views • 2 hours ago</div>
-            </div>
-        </div>
-
-        <!-- വീഡിയോ 2 -->
-        <div class="video-card" onclick="playWarning()">
-            <div class="thumbnail">
-                <img src="https://img.freepik.com/free-vector/cute-elephant-sitting-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-4158.jpg" alt="Cartoon">
-                <div class="play-btn">▶</div>
-            </div>
-            <div class="video-info">
-                <div class="video-title">ആനക്കുട്ടിയും കൂട്ടുകാരും</div>
-                <div class="video-meta">2M views • 5 hours ago</div>
-            </div>
-        </div>
-
-        <!-- വീഡിയോ 3 -->
-        <div class="video-card" onclick="playWarning()">
-            <div class="thumbnail">
-                <img src="https://img.freepik.com/free-vector/cute-monkey-holding-banana-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated_138676-5085.jpg" alt="Cartoon">
-                <div class="play-btn">▶</div>
-            </div>
-            <div class="video-info">
-                <div class="video-title">കുരങ്ങന്റെ വികൃതികൾ</div>
-                <div class="video-meta">10M views • 1 day ago</div>
-            </div>
+            <div class="video-info"><div class="video-title">നിങ്ങൾക്കായി ഒരു കാർട്ടൂൺ!</div></div>
         </div>
     </div>
 
     <script>
         function playWarning() {
-            // സ്പീച്ച് സിന്തസിസ് ഉപയോഗിച്ച് ശബ്ദം കേൾപ്പിക്കുന്നു
             const msg = new SpeechSynthesisUtterance();
-            msg.text = "Kuttikal phonil kalikkaruthey"; // മലയാളം ഉച്ചാരണം ലഭിക്കാൻ മംഗ്ലീഷിൽ നൽകി
-            msg.lang = 'ml-IN'; // മലയാളം സപ്പോർട്ട് ഉണ്ടെങ്കിൽ അത് എടുക്കും
+            msg.text = "Kuttikal phonil kalikkaruthey";
+            msg.lang = 'ml-IN';
             window.speechSynthesis.speak(msg);
-            
-            // മുന്നറിയിപ്പ് ബോക്സ്
-            alert("കുട്ടികൾ ഫോണിൽ കളിക്കരുത്!");
         }
     </script>
-
 </body>
 </html>
-
